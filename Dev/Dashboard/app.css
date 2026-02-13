@@ -223,7 +223,7 @@ h3 {
     gap: 20px;
 }
 
-.chartBox {
+.chart-box {
     background: var(--color-dark-variant);
     color: var(--color-white);
     padding: 20px;
@@ -233,43 +233,44 @@ h3 {
     height: 150px;
 }
 
-.boxInfo {
+.box-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.boxInfo .title {
+.box-info .title {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 0.9rem;
 }
 
-.boxInfo h1 {
+.box-info h1 {
     font-size: 2rem;
     font-weight: 700;
 }
+.box-info
 
-.boxInfo a {
+.box-info a {
     color: #7380ec;
     font-size: 0.75rem;
 }
 
-.chartInfo {
+.chart-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.chartInfo .percentage {
+.chart-info .percentage {
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--color-success);
 }
 
-.chartInfo .duration {
+.chart-info .duration {
     font-size: 0.7rem;
     color: var(--color-info-dark);
 }
