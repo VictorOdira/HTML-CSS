@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.background-container {
+    position: relative;
+    height:  100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form {
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: 15px;
+ max-width: 400px;
+ margin-top: 50px;
+}
+
+.login-form h1 {
+    font-size: 24px;
+    text-align: center;
+}
+.login-input {
+    width: 100%;
+    height: 25px;
+    position: relative;
+}
+
+.login-input input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 5px;
+    padding: 10px;
+    background: transparent;
+}
+
+
+.login-input i {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+.login-auth {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.login-form p {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+}
+
+.Register {
+    height: 30px;
+    width: 80px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

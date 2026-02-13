@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFFFFF;
+    --primary-font: "Inter", sans-serif;
+}
+
+body {
+    background-color:#fff2ef;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 550px;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 12px;;
+    border-radius: 10px;
+    overflow: hidden;
+}
+    
+.left-container {
+ padding: 12px;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+}
+
+.left-container h1 {
+    font-size: 25px;
+}
+
+.left-container p {
+    font-size: 14px;
+    color: gray;
+}
+.input-group {
+    position: relative;
+}
+.input-group input {
+    width: 100%;
+    padding: 7px;
+    border: 0.8px solid rgb(128, 128, 128);
+    border-radius: 4px;
+}
+
+.input-group i {
+    position:absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+.right-container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.next-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next-button p {
+    color: blue;
+}
+
+.next-button button {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: lightskyblue;
+    border: 0.7px solid grey;
+    border-radius: 2px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.next-button button p {
+    color: #000000;
+    font-size: 10px;
+}
+
+.next-button button img {
+    color: #000000;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.button-wrapper p {
+    font-size: 14px;
+}
+.button-wrapper .socials {
+    display: flex;
+    gap: 15px;
+}
+.button-wrapper button {
+    display: flex;
+    width: 88px;
+    gap: 5px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0.7px solid rgb(128, 128, 128);
+
+}
+
+.button-wrapper button img {
+    border-radius: 50%;
+}
+
+.button-wrapper span {
+    color: blue;
+}
+

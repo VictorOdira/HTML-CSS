@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="app.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="">
+                    <h2>Dash<span class="danger">board</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="nav-right">
+                <i class="fa-brands fa-affiliatetheme"></i>
+                <div class="user">
+                    <img src="/images/profile-4.jpg" alt="">
+                    <h2>Joe</h2>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="left-container">
+            <div class="sidebar">
+                    <a href="#">
+                        <i class="fa-solid fa-grip"></i>
+                        <h3>Dashboard</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <h3>Customers</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-arrow-down-1-9"></i>
+                        <h3>Orders</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Analytics</h3>
+                    </a>
+                    <div class="notification">
+                        <a href="#">
+                            <i class="fa-regular fa-message"></i>
+                            <span class="badge">3</span>
+                            <h3>Messages</h3>
+                        </a>
+                    </div>
+                    <a href="#">
+                        <i class="fa-brands fa-product-hunt"></i>
+                        <h3>Products</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-regular fa-flag"></i>
+                        <h3>Reports</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <h3>Settings</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-plus"></i>
+                        <h3>Add Products</h3>
+                    </a>
+                <div class="logout">
+                    <a href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <h3>Logout</h3>
+                    </a>
+                </div>
+                </div>
+            </div>
+            <div class="middle-container">
+                <div class="insights">
+                <div class="chartBox">
+                    <div class="boxInfo">
+                        <div class="title">
+                            <i class="fa-solid fa-users" style="color: #7380ec;"></i>
+                            <span>Total Users</span>
+                        </div>
+                        <h1>11.238</h1>
+                        <a href="#">View all</a>
+                    </div>
+                    <div class="chartInfo">
+                        <div class="chart"></div>
+                        <div class="texts">
+                            <span class="percentage">45%</span>
+                            <span class="duration">this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chartBox">
+                    <div class="boxInfo">
+                        <div class="title">
+                            <i class="fa-solid fa-dollar-sign" style="color: #41f1b6;"></i>
+                            <span>Total Revenue</span>
+                        </div>
+                        <h1>$56.432</h1>
+                        <a href="#">View all</a>
+                    </div>
+                    <div class="chartInfo">
+                        <div class="chart"></div>
+                        <div class="texts">
+                            <span class="percentage" style="color: var(--color-danger);">-12%</span>
+                            <span class="duration">this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chartBox">
+                    <div class="boxInfo">
+                        <div class="title">
+                            <i class="fa-solid fa-box" style="color: #ffbb55;"></i>
+                            <span>Total Products</span>
+                        </div>
+                        <h1>238</h1>
+                        <a href="#">View all</a>
+                    </div>
+                    <div class="chartInfo">
+                        <div class="chart"></div>
+                        <div class="texts">
+                            <span class="percentage">21%</span>
+                            <span class="duration">this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chartBox">
+                    <div class="boxInfo">
+                        <div class="title">
+                            <i class="fa-solid fa-scale-balanced" style="color: #ff7782;"></i>
+                            <span>Total Ratio</span>
+                        </div>
+                        <h1>2.6</h1>
+                        <a href="#">View all</a>
+                    </div>
+                    <div class="chartInfo">
+                        <div class="chart"></div>
+                        <div class="texts">
+                            <span class="percentage">12%</span>
+                            <span class="duration">this month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="revenue-analytics">
+                <h2>Revenue Analytics</h2>
+                <div class="main-chart-area">
+                    </div>
+            </div>
+            </div>
+            <div class="right-container">
+                Right
+            </div>
+        </div>
+    </div>
+</body>
+</html>

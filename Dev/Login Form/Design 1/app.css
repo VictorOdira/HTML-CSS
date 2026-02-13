@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Basic starter CSS Code*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #eb7d24;
+    --primary-font: "Inter", sans-serif;
+}
+
+body {
+    background-color: azure;
+    display: flex;
+    font-family: var(--primary-font);
+    justify-content: center;
+    padding: 16px;
+}
+.authentication {
+    background-color: #FFFF;
+    border-radius: 10px;
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 50px;
+    gap: 5.6px;
+    overflow: hidden;
+}
+.authentication > * {
+    flex: 1;
+}
+
+.left-authentication {
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.left-authentication h1 {
+    color: #FFFF;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.left-authentication p {
+    color: #FFFF;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.left-authentication button {
+    height: 30px;
+    width: 80px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 6px;
+    border: 1px solid #FFFF;
+    color: white;
+}
+
+.right-authentication {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+}
+
+.right-authentication h1 {
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.right-authentication  .input-group {
+   position: relative;
+   width: 100%;
+}
+.right-authentication  .input-group input {
+    height: 30px;
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(223, 222, 222);
+}
+
+.right-authentication  .input-group  i {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+.right-authentication p {
+  font-size: 12px;
+  color: #555555;
+ }
+
+ .right-authentication button {
+    height: 25px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFFF;
+    background: linear-gradient(90deg, black, var(--primary-color));
+    border: none;
+    border-radius: 10px;
+ }
+.right-authentication .social-platforms {
+    display: flex;
+    gap: 8px;
+}
+
+.right-authentication .social-platforms .media {
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    display: inline-block;
+}
+
+.right-authentication .social-platforms .media:hover {
+    transform: rotate(360deg);
+    background: var(--primary-color);
+}
