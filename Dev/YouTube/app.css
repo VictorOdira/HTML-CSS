@@ -159,9 +159,28 @@ img {
     height: 12px;
 }
 
+.video-elements {
+    display: flex;
+    flex-direction: column;
+    
+}
 
-.video-title {
+.author-title {
+    display: flex;
+    margin-top: 10px;
 
+}
+
+.author-title .author-photo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.video-title .title{
+ font-size: 20px;
+ font-weight: 600;
 }
 
 .video-author {
