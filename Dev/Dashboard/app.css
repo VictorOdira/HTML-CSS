@@ -72,13 +72,13 @@ h3 {
 }
 
 .page-wrapper {
-    padding: 0 25px; /* Adds 25px to left and right */
-    max-width: 1400px; /* Optional: prevents the layout from getting too wide */
-    margin: 0 auto;    /* Centers the layout */
+    padding: 0 25px; 
+    max-width: 1400px;
+    margin: 0 auto;    
 }
 
 .navbar, .container {
-    width: 100%; /* They will now naturally fill the wrapper's space */
+    width: 100%; 
 }
 
 .navbar {
@@ -213,7 +213,7 @@ h3 {
 }
 
 .middle-container {
-    background-color: transparent; /* Let the body background show */
+    background-color: transparent; 
 }
 
 /* Grid for the 4 small boxes */
