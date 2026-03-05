@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <title>M&M Dashboard</title>
+</head>
+<body>
+    <div class="app">
+        <!--HEADER-->
+        <header class="topbar">
+            <div class="logo-tabs-container">
+                <div class="logo">
+                <img src="assets/logo.png" alt="logo">
+                <span>M&M</span>
+            </div>
+            <div class="tabs">
+                <span class="active"><i class="fa-regular fa-folder-closed"></i>Files</span>
+                <span><i class="fa-solid fa-wave-square"></i>Activity</span>
+                <span><i class="fa-regular fa-calendar-check"></i>Calendar</span>
+                <span><i class="fa-regular fa-circle-user"></i>Contact</span>
+            </div>
+            </div>
+            <div class="top-actions">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search anything..." />
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>6</span>
+                </div>
+                <img class="avatar" src="assets/avatar6.jpeg" alt="">
+            </div>
+        </header>
+        <div class="app-container">
+            <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <nav>
+            <ul>
+                <li class="all-files active"><i class="fa-regular fa-folder-closed"></i> All Files &#9660;</li>
+                <li><i class="fa-solid fa-star-and-crescent"></i>Recent</li>
+                <li><i class="fa-regular fa-star"></i> Favorites</li>
+                <li><i class="fa-solid fa-share-nodes"></i> Shared</li>
+                <li><i class="fa-solid fa-user-tag"></i>Tags</li>
+            </ul>
+            </nav>
+            <div class="features">
+                <div class="other-features">
+                    <span><i class="fa-solid fa-gear"></i>Settings</span>
+                    <span><i class="fa-regular fa-trash-can"></i>Deleted Files</span>
+                </div>
+                <div class="storage">
+                    <p><i class="fa-brands fa-usb"></i>Storage</p>
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                <small>42 GB used from 256 GB</small>
+            </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <!-- QUICK ACCESS -->
+            <section class="quick-access">
+            <h3>Quick Access</h3>
+            <div class="cards">
+                <div class="card">
+                    <i class="fa-solid fa-folder-closed"></i>
+                    <h4>Studio Work</h4>
+                    <p>2.3 GB · 23 items</p>
+                </div>
+
+                <div class="card">
+                 <i class="fa-solid fa-folder-closed"></i>
+                <h4>Source</h4>
+                <p>1.2 MB · 1 item</p>
+                </div>
+
+                <div class="card">
+                 <i class="fa-solid fa-folder-closed"></i>
+                <h4>Brand Assets</h4>
+                <p>241 MB · 8 items</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-brands fa-files-pinwheel"></i>
+                    <h4>Great Studio Pitch</h4>
+                    <p>12.3 MB · pptx</p>
+                </div>
+            </div>
+            </section>
+
+            <!-- FILE TABLE -->
+            <section class="files">
+            <div class="files-header">
+                <h3>Mazseh</h3>
+                <button>Add New</button>
+            </div>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Sharing</th>
+                    <th>Size</th>
+                    <th>Modified</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Docs</td>
+                    <td>Public</td>
+                    <td>4.5 MB</td>
+                    <td>Feb 28, 2026</td>
+                    <td>...</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Source</td>
+                    <td>
+                    <div class="avatars">
+                        <img src="assets/avatar1.jpg">
+                        <img src="assets/avatar3.jpg">
+                        <img src="assets/avatar4.jpg">
+                        <img src="assets/avatar5.jpeg">
+                        <img src="assets/avatar6.jpeg">
+                    </div>
+                    </td>
+                    <td>1.2 MB</td>
+                    <td>Today</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>Searches</td>
+                    <td>
+                    <div class="avatars">
+                        <img src="assets/avatar6.jpeg">
+                        <img src="assets/avatar5.jpeg">
+                        <img src="assets/avatar4.jpg">
+                        <img src="assets/avatar1.jpg">
+                        <img src="assets/avatar3.jpg">
+                    </div>
+                    </td>
+                    <td>1.2 MB</td>
+                    <td>Today</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>GitHub</td>
+                    <td>Shared</td>
+                    <td>1.03 MB</td>
+                    <td>Yesterday</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>Git</td>
+                    <td>Shared</td>
+                    <td>8.12 MB</td>
+                    <td>3 days ago</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>Example</td>
+                    <td>Shared</td>
+                    <td>3.54 MB</td>
+                    <td>2 days ago</td>
+                    <td>...</td>
+                </tr>
+                </tbody>
+            </table>
+            </section>
+        </main>
+        <!-- RIGHT PANEL -->
+            <aside class="right-panel">
+
+            <div class="file-info">
+                <i class="fa-solid fa-folder-closed"></i>
+                <h3>Source</h3>
+                <p>1.2MB &#8226; Yesterday &#8226; 1tem</p>
+            </div>
+            <div class="file-tags">
+                <ul class="main-link">
+                    <li class="tag-link">Tags</li>
+                    <li class="edit-link">Edit</li>
+                </ul>
+                <ul class="mini-link">
+                    <li>Work</li>
+                    <li>Source</li>
+                    <li>Font</li>
+                </ul>
+            </div>
+            <div class="sharing">
+                <ul>
+                    <li class="shaing-link">Sharing</li>
+                    <li class="manage-link">Manage</li>
+                </ul>
+                <div class="avatars">
+                    <img src="assets/avatar1.jpg">
+                    <img src="assets/avatar3.jpg">
+                    <img src="assets/avatar4.jpg">
+                    <img src="assets/avatar5.jpeg">
+                    <span>+2</span>
+                </div>
+                <ul>
+                    <li>Activities</li>
+                    <li>Comments</li>
+                    <li>Versions</li>
+                </ul>
+            </div>
+            <div class="activity">
+            <h4>Activity</h4>
+
+            <div class="activity-item">
+                <img src="assets/avatar2.jpg">
+                <div>
+                <p><strong>You</strong> shared edit access</p>
+                <small>Yesterday</small>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <img src="assets/avatar3.jpg">
+                <div>
+                <p><strong>You</strong> changed Mazseh.glyph</p>
+                <small>Apr 1, 2022</small>
+                </div>
+            </div>
+
+            </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
