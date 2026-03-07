@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
   position: relative;
   background-color: #F2F2F2;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 250px 3fr 350px;
   column-gap: 20px;
   grid-row: 20px;
   padding: 70px 30px;
@@ -70,7 +72,7 @@ body {
   align-items: center;
   width: 90px;
   height: 30px;
-  margin-right: 20px;
+  margin-left: 12px;
   border-radius: 6px;
   color: #777;
   cursor: pointer;
@@ -89,7 +91,7 @@ body {
 .top-actions {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .top-actions input {
@@ -162,6 +164,10 @@ nav li {
   font-size: 15px;
 }
 
+nav span {
+  margin-left: 90px;
+}
+
 nav li.active,
 nav li:hover {
   background: #eef2ff;
@@ -169,27 +175,46 @@ nav li:hover {
   font-weight: 500;
   gap: 50px;
 }
-
 /* FEAUTURES */
 
 .features {
-  gap: 15px;
+  gap: 10px;
 }
 
 .other-features {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  gap: 20px;
   font-size: 15px;
+  gap: 8px;
   
 }
+
+.other-features li {
+  list-style-type: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.other-features li:hover{
+  background: #eef2ff;
+  color: #3b5bdb;
+  font-weight: 500;
+  gap: 50px;
+  cursor: pointer;
+}
+
 .storage {
-  margin-top: 30px;
+  margin-left: 10px;
   border: 1px solid #CCCC;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 15px;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.storage span {
+  margin-left: 60px;
 }
 
 .progress {
@@ -212,6 +237,21 @@ nav li:hover {
   background: white;
   border-radius: 12px;
   padding: 15px;
+}
+
+.quick-access .quick-access-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.quick-access .quick-access-title span {
+  font-size: 20px;
+}
+
+.quick-access h3 {
+  font-size: 16px;
 }
 
 .cards {
@@ -244,10 +284,11 @@ nav li:hover {
 
 .card h4 {
   margin-top: 12px;
+  font-size: 14px;
 }
 
 .card p {
-  font-size: 13px;
+  font-size: 12px;
   color: #777;
   margin-top: 5px;
 }
@@ -267,12 +308,21 @@ nav li:hover {
   margin-bottom: 20px;
 }
 
+.files-header h3 {
+  font-size: 15px;
+}
+
+.files-header span {
+
+}
+
+
 .files button {
   background: #3b5bdb;
   color: white;
   border: none;
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -284,19 +334,29 @@ table {
 thead {
   text-align: left;
   color: #888;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 td, th {
   padding: 12px 0;
 }
 
+td {
+  font-size: 14px;
+  color: #888;
+}
+td i {
+  color: #1E3AD9;
+  font-size: 15px;
+}
+
 tbody tr {
   border-top: 1px solid #eee;
 }
 
-tbody tr.highlight {
+tbody tr:hover {
   background: #f1f3ff;
+  cursor: pointer;
 }
 
 /* AVATARS */
@@ -305,7 +365,7 @@ tbody tr.highlight {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  margin-right: -8px;
+  margin-right: -10px;
   border: 2px solid white;
 }
 
@@ -316,6 +376,17 @@ tbody tr.highlight {
   padding: 10px 25px;
   border-left: 1px solid #eee;
   border-radius: 12px;
+}
+.top-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-items .fa-xmark {
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
 }
 
 .file-info {
@@ -348,12 +419,13 @@ tbody tr.highlight {
   font-size: 12px;
 }
 
-.file-tags .main-link .tag-link{
+.file-tags .main-link{
   color: #888;
 }
 
-.file-tags .main-link .edit-link {
+.file-tags .main-link .active {
   color: #1E3AD9;
+  cursor: pointer;
 }
 
 .file-tags .mini-link {
@@ -364,17 +436,22 @@ tbody tr.highlight {
   gap: 10px;
   padding-left: 5px;
 }
-.file-tags .mini-link li{
+.file-tags .mini-link button{
   font-size: 12px;
   background-color: lightskyblue;
   color: #1E3AD9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 10px;
-  width: 40px;
-  height: 20px;
+  width: 50px;
+  height: 25px;
   border-radius: 5px;
+  border: 0.9px solid #ddd;
+}
+
+.file-tags .mini-link button:hover{
+  cursor: pointer;
+  color: #FFF;
+  font-size: 12px;
+  background-color: #1E3AD9;
 }
 
 .sharing ul {
@@ -385,12 +462,19 @@ tbody tr.highlight {
   font-size: 12px;
 }
 
-.sharing .shaing-link {
+.sharing .active {
+  color: #1E3AD9;
+  cursor: pointer;
+}
+
+.sharing {
   color: #888;
 }
 
-.sharing .manage-link {
+ul li .active {
   color: #1E3AD9;
+  cursor: pointer;
+
 }
 
 .sharing .avatars {
@@ -417,22 +501,200 @@ tbody tr.highlight {
   border-radius: 50%;
   border: 0.8px solid #dddd;
 }
-.activity {
-  margin-top: 30px;
+
+.activity-timeline {
+    position: relative;
+    padding-left: 30px;
+    font-family: sans-serif;
 }
 
-.activity-item {
-  display: flex;
-  gap: 12px;
-  margin-top: 15px;
+/* The Vertical Line */
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
 }
 
-.activity-item img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
 }
 
-.activity-item p {
+/* The Blue Dot */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: #3b5bdb;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.timeline-date {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.timeline-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.avatar:not(:first-child) {
+    margin-left: -12px; 
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #222;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.timeline-content a {
+    color: #3b5bdb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.file-badge {
+    display: flex;
+    align-items: center;
+    background: #f1f3f5;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    
+}
+
+.file-badge img {
+  height: 15px;
+  margin-right: 8px;
+}
+.file-badge span {
   font-size: 14px;
+}
+
+.tag-group {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.tag {
+    background: #edf2ff;
+    color: #3b5bdb;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+
+.tag-count {
+    background: #f1f3f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #8888;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 1200px) {
+    body {
+        margin: 20px; 
+    }
+    .app-container {
+        grid-template-columns: 200px 1fr 300px; /* Shrink side panels */
+        padding-top: 80px;
+    }
+    .tabs {
+        margin-left: 50px; /* Bring tabs closer to logo */
+    }
+}
+
+
+@media (max-width: 980px) {
+    .app-container {
+        grid-template-columns: 200px 1fr; 
+        height: auto;
+    }
+    .right-panel {
+        margin-top: 20px;
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .topbar {
+        width: 100%;
+        position: relative; 
+        padding: 15px;
+    }
+    .tabs span:not(.active) {
+        display: none; 
+    }
+}
+
+@media (max-width: 760px) {
+    .menu-toggle {
+        display: block;
+        font-size: 20px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .quick-access {
+      margin-top: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px; 
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        transition: 0.3s ease;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* When this class is added via JavaScript, the menu slides in */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Adjust main content to take full width since sidebar is floating */
+    .app-container {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+}
+
+/* Hide the toggle on desktop */
+@media (min-width: 761px) {
+    .menu-toggle {
+        display: none;
+    }
 }

@@ -38,7 +38,7 @@
         <aside class="sidebar">
             <nav>
             <ul>
-                <li class="all-files active"><i class="fa-regular fa-folder-closed"></i> All Files &#9660;</li>
+                <li class="all-files active"><i class="fa-regular fa-folder-closed"></i> All Files <span>&#9660;</span></li>
                 <li><i class="fa-solid fa-star-and-crescent"></i>Recent</li>
                 <li><i class="fa-regular fa-star"></i> Favorites</li>
                 <li><i class="fa-solid fa-share-nodes"></i> Shared</li>
@@ -46,12 +46,12 @@
             </ul>
             </nav>
             <div class="features">
-                <div class="other-features">
-                    <span><i class="fa-solid fa-gear"></i>Settings</span>
-                    <span><i class="fa-regular fa-trash-can"></i>Deleted Files</span>
-                </div>
+                <ul class="other-features">
+                    <li><i class="fa-solid fa-gear"></i>Settings</li>
+                    <li><i class="fa-regular fa-trash-can"></i>Deleted Files</li>
+                </ul>
                 <div class="storage">
-                    <p><i class="fa-brands fa-usb"></i>Storage</p>
+                    <p><i class="fa-brands fa-usb"></i>Storage <span>&#62;</span></p>
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
@@ -64,7 +64,10 @@
         <main class="main">
             <!-- QUICK ACCESS -->
             <section class="quick-access">
-            <h3>Quick Access</h3>
+            <div class="quick-access-title">
+                <h3>Quick Access</h3>
+                <span>...</span>
+            </div>
             <div class="cards">
                 <div class="card">
                     <i class="fa-solid fa-folder-closed"></i>
@@ -95,8 +98,8 @@
             <!-- FILE TABLE -->
             <section class="files">
             <div class="files-header">
-                <h3>Mazseh</h3>
-                <button>Add New</button>
+                <h3>Home &#62; Concept &#62; <strong>Odingo</strong></h3>
+                <button>&#43; Add New</button>
             </div>
 
             <table>
@@ -111,14 +114,14 @@
 
                 <tbody>
                 <tr>
-                    <td>Docs</td>
+                    <td class="first-column"><i class="fa-solid fa-folder-closed"></i>Docs</td>
                     <td>Public</td>
                     <td>4.5 MB</td>
                     <td>Feb 28, 2026</td>
                     <td>...</td>
                 </tr>
-                <tr class="highlight">
-                    <td>Source</td>
+                <tr>
+                    <td class="first-column"><i class="fa-solid fa-folder-closed"></i>Source</td>
                     <td>
                     <div class="avatars">
                         <img src="assets/avatar1.jpg">
@@ -133,7 +136,7 @@
                     <td>...</td>
                 </tr>
                 <tr>
-                    <td>Searches</td>
+                    <td><i class="fa-brands fa-chrome"></i>Searches</td>
                     <td>
                     <div class="avatars">
                         <img src="assets/avatar6.jpeg">
@@ -148,21 +151,21 @@
                     <td>...</td>
                 </tr>
                 <tr>
-                    <td>GitHub</td>
+                    <td><i class="fa-brands fa-github"></i>GitHub</td>
                     <td>Shared</td>
                     <td>1.03 MB</td>
                     <td>Yesterday</td>
                     <td>...</td>
                 </tr>
                 <tr>
-                    <td>Git</td>
+                    <td><i class="fa-brands fa-git-alt"></i>Git</td>
                     <td>Shared</td>
                     <td>8.12 MB</td>
                     <td>3 days ago</td>
                     <td>...</td>
                 </tr>
                 <tr>
-                    <td>Example</td>
+                    <td><i class="fa-solid fa-house-flood-water-circle-arrow-right"></i>Example</td>
                     <td>Shared</td>
                     <td>3.54 MB</td>
                     <td>2 days ago</td>
@@ -176,25 +179,28 @@
             <aside class="right-panel">
 
             <div class="file-info">
+              <div class="top-items">
                 <i class="fa-solid fa-folder-closed"></i>
+                <i class="fa-solid fa-xmark"></i>
+              </div>
                 <h3>Source</h3>
-                <p>1.2MB &#8226; Yesterday &#8226; 1tem</p>
+                <p>1.2MB &#8226; Today &#8226; 1tem</p>
             </div>
             <div class="file-tags">
                 <ul class="main-link">
-                    <li class="tag-link">Tags</li>
-                    <li class="edit-link">Edit</li>
+                    <li>Tags</li>
+                    <li class="active">Edit</li>
                 </ul>
-                <ul class="mini-link">
-                    <li>Work</li>
-                    <li>Source</li>
-                    <li>Font</li>
-                </ul>
+                <div class="mini-link">
+                    <button>Work</button>
+                    <button>Source</button>
+                    <button>Font</button>
+                </div>
             </div>
             <div class="sharing">
                 <ul>
-                    <li class="shaing-link">Sharing</li>
-                    <li class="manage-link">Manage</li>
+                    <li class="active">Sharing</li>
+                    <li>Manage</li>
                 </ul>
                 <div class="avatars">
                     <img src="assets/avatar1.jpg">
@@ -205,32 +211,71 @@
                 </div>
                 <ul>
                     <li>Activities</li>
-                    <li>Comments</li>
+                    <li class="active">Comments</li>
                     <li>Versions</li>
                 </ul>
             </div>
-            <div class="activity">
-            <h4>Activity</h4>
+            <div class="activity-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Today</div>
+                    <div class="timeline-content">
+                        <div class="avatar-group">
+                            <img src="assets/avatar6.jpeg" alt="You" class="avatar">
+                            <img src="assets/avatar1.jpg" alt="Ole Kisiara" class="avatar">
+                        </div>
+                        <p>You shared edit access to  <a href="#">Ole Kisiara</a></p>
+                    </div>
+                </div>
 
-            <div class="activity-item">
-                <img src="assets/avatar2.jpg">
-                <div>
-                <p><strong>You</strong> shared edit access</p>
-                <small>Yesterday</small>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 6, 2026</div>
+                    <div class="timeline-content">
+                        <div class="avatar-group">
+                            <img src="assets/avatar6.jpeg" alt="You" class="avatar">
+                        </div>
+                        <div class="details">
+                            <p>You changed <a href="#">Power BI File</a></p>
+                            <div class="file-badge">
+                                <span><img src="assets/bi.png" alt="">Sales.pbix</span> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 28, 2026</div>
+                    <div class="timeline-content">
+                        <div class="avatar-group">
+                            <img src="assets/avatar6.jpeg" alt="You" class="avatar">
+                            <img src="assets/avatar2.jpg" alt="Kamau" class="avatar">
+                        </div>
+                        <div class="details">
+                            <p>You invited <a href="#">Kamau John</a></p>
+                            <div class="tag-group">
+                                <span class="tag">Work</span>
+                                <span class="tag-count">+2</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="activity-item">
-                <img src="assets/avatar3.jpg">
-                <div>
-                <p><strong>You</strong> changed Mazseh.glyph</p>
-                <small>Apr 1, 2022</small>
-                </div>
-            </div>
-
-            </div>
-            </aside>
+        </aside>
         </div>
     </div>
+    <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+
+    // Optional: Close sidebar if user clicks outside of it
+    document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>
