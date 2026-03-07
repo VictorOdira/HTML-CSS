@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background: #F2F2F2;
+     font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFF;
+    padding: 15px;
+    border-bottom: 1.5px solid #CCC;
+}
+.logo-name {
+    display: flex;
+    align-items: center;
+}
+
+.logo-name img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo-name .company-name {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.logo-name .company-name i {
+    margin-right: 30px;
+}
+
+.header-right-pane {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right-pane .user-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right-pane .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header-right-pane .search-bar input {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    padding: 0 30px;
+    font-size: 17px;
+}
+
+.header-right-pane .search-bar i {
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    transform: translateX(50%);
+    font-weight: 600;
+}
+
+.header-right-pane .search-bar span {
+    background: #ECEAEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    z-index: 1;
+    transform: translateX(-140%);
+    border-radius: 2px;
+}
+
+.header-right-pane .search-bar span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.user-profile .notification, span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ECEAEA;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+}
+
+.user-profile span i{
+    font-size: 20px;
+}
+
+.user-profile .notification i {
+    font-size: 20px;
+    position: relative;
+}
+
+.user-profile .notification span {
+    position: absolute;
+    background: #169EF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    top: 60px;
+    transform: translateX(50%);
+}
+
+.user-profile .notification span {
+    color: #FFF;
+    font-size: 9px;
+}
+
+
+.user-profile .admin-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-profile .admin-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile .admin-img .role {
+    padding: 10px 0;
+}
+
+.user-profile .admin-img span {
+    background: none;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.dashboard-container {
+    background: #FFF;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
+}
+
+.sidebar {
+    margin-top: 20px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+main {
+    margin-top: 40px;
+    background-color: #CCCC;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+main .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+main .cards .card {
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 10px;
+}
+
