@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="app.css">
+    <title>HealthCare</title>
+</head>
+<body>
+    <header>
+        <div class="logo-name">
+            <img src="assets/logo.png" alt="logo img">
+            <div class="procedure-type">
+                <i class="fa-solid fa-toggle-off"></i>
+                <h1>Mental Health</h1>
+            </div>
+        </div>
+         <div class="header-right-pane">
+                <div class="search-bar">
+                    <i class="fa-brands fa-sistrix"></i>
+                    <input type="search" placeholder="Search here...">
+                    <span>⌘K</span>
+                </div>
+                <div class="user-profile">
+                    <span><i class="fa-solid fa-gear"></i></span>
+                    <div class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>3</span>
+                    </div>
+                    <div class="admin-img">
+                        <img src="/assets/avatar6.jpeg" alt="admin-img">
+                        <div class="role">
+                            <h4>Odingo Odira</h4>
+                            <span>Admin</span>
+                        </div>
+                 </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+    <div class="dashboard-container">
+        <aside class="sidebar-container">
+            <div class="sidebar-content">
+                <div class="nav-group">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="index.html"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Clinical</h4>
+                    <ul>
+                        <li class="nav-item"><a href="opd.html"><i class="fa-solid fa-hospital-user"></i> OPD</a></li>
+                        <li class="nav-item"><a href="beds.html"><i class="fa-solid fa-bed"></i> IPD & Beds</a></li>
+                        <li class="nav-item"><a href="emr.html"><i class="fa-solid fa-file-medical"></i> EMR/EHR</a></li>
+                        <li class="nav-item"><a href="theatre.html"><i class="fa-solid fa-scissors"></i> Operation Theatre</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Diagnostics</h4>
+                    <ul>
+                        <li class="nav-item"><a href="lab.html"><i class="fa-solid fa-flask"></i> Laboratory</a></li>
+                        <li class="nav-item"><a href="radiology.html"><i class="fa-solid fa-microscope"></i> Radiology</a></li>
+                        <li class="nav-item"><a href="pharmacy.html"><i class="fa-solid fa-capsules"></i> Pharmacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Operations</h4>
+                    <ul>
+                        <li class="nav-item"><a href="patients.html"><i class="fa-solid fa-user-group"></i> Patients</a></li>
+                        <li class="nav-item active"><a href="staff.html"><i class="fa-solid fa-briefcase"></i> Staff</a></li>
+                        <li class="nav-item"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                        <li class="nav-item"><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i> Analytics</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logout-section">
+                <a href="logout.php" class="logout-button">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Total Counselling</h3>
+                        <span><i class="fa-regular fa-clone"></i></span>
+                    </div>
+                    <div class="mini-details">
+                        <h1>582</h1>
+                        <p><span><i class="fa-solid fa-arrow-trend-up"></i>+3.99%</span> 5hrs ago</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Completed</h3>
+                        <span><i class="fa-regular fa-circle-check"></i></span>
+                    </div>
+                    <div class="mini-details">
+                        <h1>338</h1>
+                        <p><span><i class="fa-solid fa-arrow-trend-up"></i></i>+21.90%</span>5 hrs ago</p>
+                    </div>
+                    </div>
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Pending</h3>
+                        <span><i class="fa-solid fa-spinner"></i></span>
+                    </div>
+                    <div class="mini-details">
+                        <h1>67</h1>
+                        <p><span><i class="fa-solid fa-arrow-trend-down"></i>-0.71%</span>5 hrs ago</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <h3>Cancelled</h3>
+                        <span><i class="fa-regular fa-calendar-xmark"></i></span>
+                    </div>
+                    <div class="mini-details">
+                        <h1>10</h1>
+                        <p><span><i class="fa-solid fa-arrow-trend-up"></i>+0.21%</span>5 hrs ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="today-status">
+                <div class="total-appointments">
+                    <div class="heading-section">
+                        <h3>Today's Counselling</h3>
+                        <span>...</span>
+                    </div>
+                    <div class="calendar-container">
+                        <button class="nav-btn">&lt;</button>
+                        <div class="days-wrapper">
+                            <div class="day-item">
+                                <span>Mon</span>
+                                <strong>9</strong>
+                            </div>
+                            <div class="day-item">
+                                <span>Tue</span>
+                                <strong>10</strong>
+                            </div>
+                            <div class="day-item">
+                                <span>Wed</span>
+                                <strong>11</strong>
+                            </div>
+                            <div class="day-item">
+                                <span>Thu</span>
+                                <strong>12</strong>
+                            </div>
+                            <div class="day-item active">
+                                <span>Fri</span>
+                                <strong>13</strong>
+                            </div>
+                            <div class="day-item disabled">
+                                <span>Sat</span>
+                                <strong>14</strong>
+                            </div>
+                            <div class="day-item disabled">
+                                <span>Sun</span>
+                                <strong>15</strong>
+                            </div>
+                        </div>
+                        <button class="nav-btn">&gt;</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Gender</th>
+                                <th>Doctor</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>  
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar1.jpg" alt="patient img"><P>John Mwangi</P></td>
+                                <td>M</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Martin Otieno</p></td>
+                                <td>10:20AM</td>
+                                <td class="completed">Completed</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar2.jpg" alt="patient img"><p>Francis Mwema</p></td>
+                                <td>M</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Martin Otieno</p></td>
+                                <td>11:00AM</td>
+                                <td class="ongoing">Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar3.jpg" alt="patient img"><p>Dorine Kirui</p></td>
+                                <td>M</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Jared Kisiara</p></td>
+                                <td>11:45 AM</td>
+                                <td class="pending">Pending</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar4.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>M</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="ongoing">Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar4.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>F</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="ongoing">Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar4.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>F</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="pending">Pending</td>
+                            </tr>
+                            <tr>
+                                <td class="patient"><img src="assets/avatar9.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>M</td>
+                                <td class="doctor"><img src="assets/avatar8.jpg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="cancelled">Cancelled</td>
+                            </tr>
+                             <tr>
+                                <td class="patient"><img src="assets/avatar4.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>F</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="pending">Pending</td>
+                            </tr>
+                             <tr>
+                                <td class="patient"><img src="assets/avatar4.jpg" alt="patient img"><p>Sophie Nzuma</p></td>
+                                <td>F</td>
+                                <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Joyce Ruto</p></td>
+                                <td>12:01 PM</td>
+                                <td class="pending">Pending</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
+                <div class="pending-appointments">
+                    <div class="heading-section">
+                        <h3>Pending</h3>
+                        <span>...</span>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="assets/avatar4.jpg" alt="Img">
+                                <h6>Sophie Nzuma</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="detail-row">
+                                    <p class="doctor-name">Dr. Joyce Ruto</p>
+                                    <p class="date">03-12-2026</p>
+                                </div>
+                                <div class="detail-row">
+                                    <p class="type">Family Counselling</p>
+                                    <p class="time">02:28 PM</p>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-reject">Reject</button>
+                                <button class="btn-accept">Accept</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="assets/avatar1.jpg" alt="Img">
+                                <h6>Dorine Kirui</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="detail-row">
+                                    <p class="doctor-name">Dr. Jared Kisiara</p>
+                                    <p class="date">03-12-2026</p>
+                                </div>
+                                <div class="detail-row">
+                                    <p class="type">Group Counselling</p>
+                                    <p class="time">03:15 PM</p>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-reject">Reject</button>
+                                <button class="btn-accept">Accept</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="assets/avatar3.jpg" alt="Img">
+                                <h6>John Mwangi</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="detail-row">
+                                    <p class="doctor-name">Dr. Marti Otieno</p>
+                                    <p class="date">03-12-2026</p>
+                                </div>
+                                <div class="detail-row">
+                                    <p class="type">Trauma Counselling</p>
+                                    <p class="time">04:30 PM</p>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-reject">Reject</button>
+                                <button class="btn-accept">Accept</button>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="cancelled-appointments">
+                    <div class="heading-section">
+                        <h3>Cancelled</h3>
+                        <span>...</span>
+                    </div>
+                    <div class="cards">
+                        <div class="card active">
+                            <div class="card-header">
+                                <img src="assets/avatar4.jpg" alt="Img">
+                                <h6>Samantha Brown</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="date-time">2026-02-11, 02:30 PM</p>
+                                <p class="type">Behavioral Therapy</p>
+                                <p class="doctor-name">Dr. Martin Otieno</p>
+                            </div>
+                            <button class="btn-notify">Notify Doctor</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="assets/avatar10.jpg" alt="Img">
+                                <h6>Martin Mutuku</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="date-time">2026-02-11, 03:00 PM</p>
+                                <p class="type">Couples Counseling</p>
+                                <p class="doctor-name">Dr. Joyce Ruto</p>
+                            </div>
+                            <button class="btn-notify">Notify Doctor</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="assets/avatar.jpg" alt="Img">
+                                <h6>Olivia Njeri</h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="date-time">2026-02-11, 03:00 PM</p>
+                                <p class="type">Bi-Polar Counseling</p>
+                                <p class="doctor-name">Dr. Jared Kisiara</p>
+                            </div>
+                            <button class="btn-notify">Notify Doctor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+        <footer>
+            <div class="copy-right">
+                <p class="copyright">Copyright &#169; 2026 HealthCare</p>
+                <p>Privacy Policy</p>
+                <p>Terms and Conditions</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="social-links">
+                <span><a href="#"><i class="fa-brands fa-facebook-f"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-x-twitter"></i></a></span>
+                <span> <a href="#"><i class="fa-brands fa-linkedin"></i></a></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

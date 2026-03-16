@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="app.css">
+    <title>HealthCare</title>
+</head>
+<body>
+    <header>
+        <div class="logo-name">
+            <img src="assets/logo.png" alt="logo img">
+            <div class="procedure-type">
+                <i class="fa-solid fa-toggle-off"></i>
+                <h1>Mental Health</h1>
+            </div>
+        </div>
+         <div class="header-right-pane">
+                <div class="search-bar">
+                    <i class="fa-brands fa-sistrix"></i>
+                    <input type="search" placeholder="Search here...">
+                    <span>⌘K</span>
+                </div>
+                <div class="user-profile">
+                    <span><i class="fa-solid fa-gear"></i></span>
+                    <div class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>3</span>
+                    </div>
+                    <div class="admin-img">
+                        <img src="/assets/avatar6.jpeg" alt="admin-img">
+                        <div class="role">
+                            <h4>Odingo Odira</h4>
+                            <span>Admin</span>
+                        </div>
+                 </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+    <div class="dashboard-container">
+        <aside class="sidebar-container">
+            <div class="sidebar-content">
+                <div class="nav-group">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="index.html"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Clinical</h4>
+                    <ul>
+                        <li class="nav-item"><a href="opd.html"><i class="fa-solid fa-hospital-user"></i> OPD</a></li>
+                        <li class="nav-item"><a href="beds.html"><i class="fa-solid fa-bed"></i> IPD & Beds</a></li>
+                        <li class="nav-item"><a href="emr.html"><i class="fa-solid fa-file-medical"></i> EMR/EHR</a></li>
+                        <li class="nav-item"><a href="theatre.html"><i class="fa-solid fa-scissors"></i> Operation Theatre</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Diagnostics</h4>
+                    <ul>
+                        <li class="nav-item"><a href="lab.html"><i class="fa-solid fa-flask"></i> Laboratory</a></li>
+                        <li class="nav-item"><a href="radiology.html"><i class="fa-solid fa-microscope"></i> Radiology</a></li>
+                        <li class="nav-item"><a href="pharmacy.html"><i class="fa-solid fa-capsules"></i> Pharmacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="group-label">Operations</h4>
+                    <ul>
+                        <li class="nav-item"><a href="patients.html"><i class="fa-solid fa-user-group"></i> Patients</a></li>
+                        <li class="nav-item active"><a href="staff.html"><i class="fa-solid fa-briefcase"></i> Staff</a></li>
+                        <li class="nav-item"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                        <li class="nav-item"><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i> Analytics</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logout-section">
+                <a href="logout.php" class="logout-button">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>   
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-titles">
+                <h2>Doctor & Clinical Staff Management</h2>
+                <p>Manage doctors, schedules, and performance</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <p>Total Doctors</p>
+                </div>
+                <h3>45</h3>
+                <p class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12% vs last week</p>
+                </div>
+                <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>On Duty Today</p>
+                </div>
+                <h3>32</h3>
+                <p class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12% vs last week</p>
+                </div>
+                <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fa-solid fa-gauge-simple"></i>
+                    <p>Avg Consultations</p>
+                </div>
+                <h3>18/day</h3>
+                <p class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12% vs last week</p>
+                </div>
+                <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Patient Satisfaction</p>
+                </div>
+                <h3>4.8/5</h3>
+                <p class="trend negative"><i class="fa-solid fa-arrow-trend-down"></i> +15% vs last week</p>
+                </div>
+            </div>
+            <div class="queue-container">
+                <div class="queue-header">
+                    <h3>Prescription Queue</h3>
+                    <div class="queue-controls">
+                        <div class="inner-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search by name or specialty...">
+                        </div>
+                        <button class="control-button"><i class="fa-regular fa-calendar"></i> Sat, Feb 7</button>
+                        <button class="control-button"><i class="fa-solid fa-sliders"></i> Filter</button>
+                    </div>
+                </div>
+
+                <div class="scroll-area">
+                    <div class="doctor-grid">
+                <div class="doctor-card">
+                    <div class="doc-header">
+                        <div class="doctor-info">
+                            <img src="assets/avatar1.jpg" alt="Doctor">
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>MD, FACC (Cardiology)</p>
+                            </div>
+                        </div>
+                        <span class="status available">Available</span>
+                    </div>
+                    <div class="doc-details">
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-id-card"></i> License</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>MED-002-2021</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-briefcase"></i> Experience</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>17 years</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-calendar-check"></i> Scheduled at</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>Mon-Fri, 9AM-5PM</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-user-group"></i> Patients Today</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong class="badge-blue">12</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-phone"></i> Phone No</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>(+254) 7234-56XX</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-envelope"></i> Email address</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>mcheni@gmail.com</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doc-header">
+                        <div class="doctor-info">
+                            <img src="assets/avatar1.jpg" alt="Doctor">
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>MD, FACC (Cardiology)</p>
+                            </div>
+                        </div>
+                        <span class="status duty">On Duty</span>
+                    </div>
+                    <div class="doc-details">
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-id-card"></i> License</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>MED-002-2021</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-briefcase"></i> Experience</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>17 years</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-calendar-check"></i> Scheduled at</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>Mon-Fri, 9AM-5PM</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-user-group"></i> Patients Today</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong class="badge-blue">12</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-phone"></i> Phone No</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>(+254) 7234-56XX</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-envelope"></i> Email address</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>mcheni@gmail.com</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doc-header">
+                        <div class="doctor-info">
+                            <img src="assets/avatar2.jpg" alt="Doctor">
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>MD, FACC (Neurology)</p>
+                            </div>
+                        </div>
+                        <span class="status surgery">In Surgery</span>
+                    </div>
+                    <div class="doc-details">
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-id-card"></i> License</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>MED-002-2021</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-briefcase"></i> Experience</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>17 years</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-calendar-check"></i> Scheduled at</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>Mon-Fri, 9AM-5PM</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-user-group"></i> Patients Today</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong class="badge-blue">12</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-phone"></i> Phone No</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>(+254) 7234-56XX</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-envelope"></i> Email address</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>mcheni@gmail.com</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doc-header">
+                        <div class="doctor-info">
+                            <img src="assets/avatar1.jpg" alt="Doctor">
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>MD, FACC (Cardiology)</p>
+                            </div>
+                        </div>
+                        <span class="status leave">On leave</span>
+                    </div>
+                    <div class="doc-details">
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-id-card"></i> License</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>MED-002-2021</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-briefcase"></i> Experience</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>17 years</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-calendar-check"></i> Scheduled at</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>Mon-Fri, 9AM-5PM</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-user-group"></i> Patients Today</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong class="badge-blue">12</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-phone"></i> Phone No</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>(+254) 7234-56XX</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label"><i class="fa-solid fa-envelope"></i> Email address</span>
+                            <span class="colon">:</span>
+                            <span class="value"><strong>mcheni@gmail.com</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+       </main>
+        </div>
+        <footer>
+            <div class="copy-right">
+                <p class="copyright">Copyright &#169; 2026 HealthCare</p>
+                <p>Privacy Policy</p>
+                <p>Terms and Conditions</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="social-links">
+                <span><a href="#"><i class="fa-brands fa-facebook-f"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-x-twitter"></i></a></span>
+                <span> <a href="#"><i class="fa-brands fa-linkedin"></i></a></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

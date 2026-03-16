@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="app.css">
+    <title>HealthCare</title>
+</head>
+<body>
+    <header>
+        <div class="logo-name">
+            <img src="assets/logo.png" alt="logo img">
+            <div class="procedure-type">
+                <i class="fa-solid fa-toggle-off"></i>
+                <h1>Psychotherapy</h1>
+            </div>
+        </div>
+         <div class="search-bar">
+            <i class="fa-brands fa-sistrix"></i>
+            <input type="search" placeholder="Search patient, doctor etc">
+            <span>⌘K</span>
+        </div>
+        <div class="right-pane">
+            <div class="calendar-items">
+                <span><i class="fa-solid fa-calendar-check"></i>This Week</span>
+                <p>Sort by:</p>
+                <Span><p>Patient</p> &#8964;</Span>
+            </div>
+            <button>+ Add New</button>
+        </div>
+    </header>
+    <body>
+        <div class="main-container">
+            <div class="dashboard-container">
+                <aside class="sidebar-container">
+                <div class="sidebar-content">
+                    <div class="nav-group">
+                        <ul>
+                            <li class="nav-item">
+                                <a href="index.html"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="group-label">Clinical</h4>
+                        <ul>
+                            <li class="nav-item"><a href="opd.html"><i class="fa-solid fa-hospital-user"></i> OPD</a></li>
+                            <li class="nav-item"><a href="beds.html"><i class="fa-solid fa-bed"></i> IPD & Beds</a></li>
+                            <li class="nav-item"><a href="emr.html"><i class="fa-solid fa-file-medical"></i> EMR/EHR</a></li>
+                            <li class="nav-item"><a href="theatre.html"><i class="fa-solid fa-scissors"></i> Operation Theatre</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="group-label">Diagnostics</h4>
+                        <ul>
+                            <li class="nav-item"><a href="lab.html"><i class="fa-solid fa-flask"></i> Laboratory</a></li>
+                            <li class="nav-item"><a href="radiology.html"><i class="fa-solid fa-microscope"></i> Radiology</a></li>
+                            <li class="nav-item"><a href="pharmacy.html"><i class="fa-solid fa-capsules"></i> Pharmacy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h4 class="group-label">Operations</h4>
+                        <ul>
+                            <li class="nav-item"><a href="patients.html"><i class="fa-solid fa-user-group"></i> Patients</a></li>
+                            <li class="nav-item active"><a href="staff.html"><i class="fa-solid fa-briefcase"></i> Staff</a></li>
+                            <li class="nav-item"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                            <li class="nav-item"><a href="analytics.html"><i class="fa-solid fa-chart-simple"></i> Analytics</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="logout-section">
+                    <a href="logout.php" class="logout-button">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </aside>
+        <main>
+            <div class="list-container">
+                <table class="departmental-lists">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" /></th>
+                            <th>Patient ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Appointed for</th>
+                            <th>Counselling Type</th>
+                            <th>Assigned Doctor</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM002</td>
+                            <td>2026-03-10</td>
+                            <td>08:00AM</td>
+                            <td>Noela Kiptoo</td>
+                            <td>29</td>
+                            <td>Female</td>
+                            <td>Psychotherapy</td>
+                            <td>Group Therapy</td>
+                            <td class="doctor"><img src="assets/avatar.jpg" alt="doctor img"><p>Dr. Jared Kisiara</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM002</td>
+                            <td>2026-03-10</td>
+                            <td>08:15AM</td>
+                            <td>John Mwangi</td>
+                            <td>38</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Family Therapy</td>
+                            <td class="doctor"><img src="assets/avatar2.jpg" alt="doctor img"><p>Dr. Bildad Oleko</p></td>
+                            <td>Completed</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM003</td>
+                            <td>2026-03-10</td>
+                            <td>08:30AM</td>
+                            <td>Caleb Doe</td>
+                            <td>32</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Individual Therapy</td>
+                            <td class="doctor"><img src="assets/avatar3.jpg" alt="doctor img"><p>Dr. Polycap Makhokha</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM004</td>
+                            <td>2026-03-10</td>
+                            <td>08:45AM</td>
+                            <td>Dorine Nduta</td>
+                            <td>45</td>
+                            <td>Female</td>
+                            <td>Psychotherapy</td>
+                            <td>Therapy - CBT</td>
+                            <td class="doctor"><img src="assets/avatar1.jpg" alt="doctor img"><p>Dr. Felistus Kirwa</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM005</td>
+                            <td>2026-03-10</td>
+                            <td>09:00AM</td>
+                            <td>Phylis Kandi</td>
+                            <td>43</td>
+                            <td>Female</td>
+                            <td>Psychotherapy</td>
+                            <td>Therapy - DBT</td>
+                            <td class="doctor"><img src="assets/avatar5.jpeg" alt="doctor img"><p>Dr. Samson Mwangi</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM006</td>
+                            <td>2026-03-10</td>
+                            <td>09:15AM</td>
+                            <td>Daniel Okoto</td>
+                            <td>60</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Psychodynamic Therapy</td>
+                            <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Dr. Jared Kisiara</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM007</td>
+                            <td>2026-03-10</td>
+                            <td>09:30AM</td>
+                            <td>John Kirwa</td>
+                            <td>72</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Therapy - ACT</td>
+                            <td class="doctor"><img src="assets/avatar7.jpg" alt="doctor img"><p>Dr. Kisiara Olielo</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM008</td>
+                            <td>2026-03-10</td>
+                            <td>09:45AM</td>
+                            <td>Lily Lorata</td>
+                            <td>37</td>
+                            <td>Female</td>
+                            <td>Psychotherapy</td>
+                            <td>Interpersonal Therapy (IPT)</td>
+                            <td class="doctor"><img src="assets/avatar8.jpg" alt="doctor img"><p>Dr. Owidi Owidi</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM009</td>
+                            <td>2026-03-10</td>
+                            <td>10:00AM</td>
+                            <td>Dorcus Kirawa</td>
+                            <td>30</td>
+                            <td>Famale</td>
+                            <td>Psychotherapy</td>
+                            <td>Family Therapy</td>
+                            <td class="doctor"><img src="assets/avatar9.jpg" alt="doctor img"><p>Dr. Martin Otieno</p></td>
+                            <td>Cancelled</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM010</td>
+                            <td>2026-03-10</td>
+                            <td>10:30AM</td>
+                            <td>John Doe</td>
+                            <td>26</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Trauma-Informed Care</td>
+                            <td class="doctor"><img src="assets/avatar10.jpg" alt="doctor img"><p>Dr. Domnic Mutuku</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM011</td>
+                            <td>2026-03-10</td>
+                            <td>10:30AM</td>
+                            <td>David Kilome</td>
+                            <td>35</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Couples Therapy</td>
+                            <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Dr. Joyce Ruto</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM012</td>
+                            <td>2026-03-10</td>
+                            <td>11:00AM</td>
+                            <td>Esther Kariuki</td>
+                            <td>40</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Family Therapy</td>
+                            <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Dr. Job Okomo</p></td>
+                            <td>Ongoing</td>
+                             <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>RHF-GM013</td>
+                            <td>2026-03-10</td>
+                            <td>11:15AM</td>
+                            <td>Lucia Otieno</td>
+                            <td>38</td>
+                            <td>Male</td>
+                            <td>Psychotherapy</td>
+                            <td>Marriage Therapy</td>
+                            <td class="doctor"><img src="assets/avatar6.jpeg" alt="doctor img"><p>Dr. Jane Kirui</p></td>
+                            <td>Cancelled</td>
+                            <td class="action-cell">
+                                <div class="menu-container">
+                                    <button class="btn-more">•••</button>
+                                    <div class="dropdown-menu">
+                                    <a href="#">Edit</a>
+                                    <a href="#" class="text-red">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                <div class="showing-count">Showing 13 out of 512</div>
+                    <div class="pagination">
+                        <button class="page-arrow">‹</button>
+                        <button class="page-num active">1</button>
+                        <button class="page-num">2</button>
+                        <button class="page-num">3</button>
+                        <span>...</span>
+                        <button class="page-num">16</button>
+                        <button class="page-arrow">›</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+        <footer>
+            <div class="copy-right">
+                <p class="copyright">Copyright &#169; 2026 HealthCare</p>
+                <p>Privacy Policy</p>
+                <p>Terms and Conditions</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="social-links">
+                <span><a href="#"><i class="fa-brands fa-facebook-f"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-x-twitter"></i></a></span>
+                <span> <a href="#"><i class="fa-brands fa-linkedin"></i></a></span>
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>
