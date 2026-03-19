@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - lamadmin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e212b;
+        }
+        
+        .sidebar-item {
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        
+        .sidebar-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-left: 3px solid #6366f1;
+        }
+        
+        .glass-card {
+            background: rgba(30, 33, 43, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .sparkline {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2s ease-out forwards;
+        }
+        
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e212b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3f4451;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f5565;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="text-gray-300 overflow-hidden">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#1a1d26] flex flex-col border-r border-gray-800/50 overflow-y-auto">
+            <!-- Logo -->
+            <div class="p-6 flex items-center gap-3">
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-bar text-white text-sm"></i>
+                </div>
+                <span class="text-white font-semibold text-lg tracking-tight">lamadmin</span>
+            </div>
+
+            <!-- Main Menu -->
+            <nav class="flex-1 px-4 space-y-1">
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 mt-4 px-2">Main</div>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-home w-5"></i>
+                    <span>Homepage</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-user w-5"></i>
+                    <span>Profile</span>
+                </a>
+
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 mt-6 px-2">Lists</div>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-users w-5"></i>
+                    <span>Users</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-shopping-bag w-5"></i>
+                    <span>Products</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-shopping-cart w-5"></i>
+                    <span>Orders</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-file-alt w-5"></i>
+                    <span>Posts</span>
+                </a>
+
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 mt-6 px-2">General</div>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-th-large w-5"></i>
+                    <span>Elements</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-sticky-note w-5"></i>
+                    <span>Notes</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-edit w-5"></i>
+                    <span>Forms</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-calendar w-5"></i>
+                    <span>Calendar</span>
+                </a>
+
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 mt-6 px-2">Maintenance</div>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-cog w-5"></i>
+                    <span>Settings</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-shield-alt w-5"></i>
+                    <span>Backups</span>
+                </a>
+
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2 mt-6 px-2">Analytics</div>
+                
+                <a href="#" class="sidebar-item active flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-chart-bar w-5"></i>
+                    <span>Charts</span>
+                </a>
+                
+                <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 text-sm">
+                    <i class="fas fa-clipboard-list w-5"></i>
+                    <span>Logs</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden bg-[#1e212b]">
+            <!-- Header -->
+            <header class="h-16 bg-[#1e212b] border-b border-gray-800/50 flex items-center justify-between px-8">
+                <div class="flex items-center gap-4">
+                    <button class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-6">
+                    <button class="text-gray-400 hover:text-white transition-colors relative">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white transition-colors relative">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white transition-colors relative">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white transition-colors relative">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    
+                    <div class="flex items-center gap-3 pl-6 border-l border-gray-700">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Jane" class="w-8 h-8 rounded-full border-2 border-gray-700">
+                        <span class="text-sm font-medium text-white">Jane</span>
+                        <button class="text-gray-400 hover:text-white">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="flex-1 overflow-y-auto p-8">
+                <div class="grid grid-cols-12 gap-6 max-w-[1600px] mx-auto">
+                    
+                    <!-- Top Deals (Left Column) -->
+                    <div class="col-span-12 lg:col-span-3 fade-in">
+                        <div class="glass-card rounded-2xl p-6 hover-lift h-full">
+                            <h3 class="text-white text-lg font-semibold mb-6">Top Deals</h3>
+                            <div class="space-y-5" id="topDealsList">
+                                <!-- Generated by JS -->
+                            </div>
+                            
+                            <!-- Total Visit Chart -->
+                            <div class="mt-8 pt-6 border-t border-gray-700/50">
+                                <h4 class="text-gray-400 text-sm mb-4">Total Visit</h4>
+                                <div class="h-32">
+                                    <canvas id="visitChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Column (Stats + Revenue) -->
+                    <div class="col-span-12 lg:col-span-6 space-y-6">
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Total Users -->
+                            <div class="glass-card rounded-2xl p-5 hover-lift fade-in" style="animation-delay: 0.1s">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-users text-indigo-400"></i>
+                                    </div>
+                                    <div class="h-12 w-24">
+                                        <svg class="w-full h-full sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <path d="M0,35 Q20,30 40,20 T80,25 T100,15" fill="none" stroke="#6366f1" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="text-2xl font-bold text-white mb-1">11,238</div>
+                                <div class="text-xs text-gray-400 mb-2">Total Users</div>
+                                <div class="flex items-center justify-between">
+                                    <button class="text-xs text-indigo-400 hover:text-indigo-300">View all</button>
+                                    <span class="text-xs text-emerald-400 font-medium">45% <span class="text-gray-500 font-normal">this month</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Total Revenue -->
+                            <div class="glass-card rounded-2xl p-5 hover-lift fade-in" style="animation-delay: 0.2s">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-dollar-sign text-pink-400"></i>
+                                    </div>
+                                    <div class="h-12 w-24">
+                                        <svg class="w-full h-full sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <path d="M0,30 Q25,35 50,20 T100,25" fill="none" stroke="#ec4899" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="text-2xl font-bold text-white mb-1">$56,432</div>
+                                <div class="text-xs text-gray-400 mb-2">Total Revenue</div>
+                                <div class="flex items-center justify-between">
+                                    <button class="text-xs text-indigo-400 hover:text-indigo-300">View all</button>
+                                    <span class="text-xs text-red-400 font-medium">-12% <span class="text-gray-500 font-normal">this month</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Total Products -->
+                            <div class="glass-card rounded-2xl p-5 hover-lift fade-in" style="animation-delay: 0.3s">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-box text-blue-400"></i>
+                                    </div>
+                                    <div class="h-12 w-24">
+                                        <svg class="w-full h-full sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <path d="M0,25 Q30,35 60,15 T100,20" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="text-2xl font-bold text-white mb-1">238</div>
+                                <div class="text-xs text-gray-400 mb-2">Total Products</div>
+                                <div class="flex items-center justify-between">
+                                    <button class="text-xs text-indigo-400 hover:text-indigo-300">View all</button>
+                                    <span class="text-xs text-emerald-400 font-medium">21% <span class="text-gray-500 font-normal">this month</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Total Ratio -->
+                            <div class="glass-card rounded-2xl p-5 hover-lift fade-in" style="animation-delay: 0.4s">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-percentage text-amber-400"></i>
+                                    </div>
+                                    <div class="h-12 w-24">
+                                        <svg class="w-full h-full sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <path d="M0,30 Q20,20 40,25 T80,15 T100,10" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="text-2xl font-bold text-white mb-1">2.6</div>
+                                <div class="text-xs text-gray-400 mb-2">Total Ratio</div>
+                                <div class="flex items-center justify-between">
+                                    <button class="text-xs text-indigo-400 hover:text-indigo-300">View all</button>
+                                    <span class="text-xs text-emerald-400 font-medium">12% <span class="text-gray-500 font-normal">this month</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue Analytics -->
+                        <div class="glass-card rounded-2xl p-6 hover-lift fade-in" style="animation-delay: 0.5s">
+                            <h3 class="text-white text-lg font-semibold mb-6">Revenue Analytics</h3>
+                            <div class="h-64">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Leads + Profit) -->
+                    <div class="col-span-12 lg:col-span-3 space-y-6">
+                        <!-- Leads by Source -->
+                        <div class="glass-card rounded-2xl p-6 hover-lift fade-in" style="animation-delay: 0.6s">
+                            <h3 class="text-white text-lg font-semibold mb-6">Leads by Source</h3>
+                            <div class="h-48 relative">
+                                <canvas id="leadsChart"></canvas>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                                        <span class="text-gray-400">Mobile</span>
+                                    </div>
+                                    <span class="text-white font-medium">400</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                                        <span class="text-gray-400">Desktop</span>
+                                    </div>
+                                    <span class="text-white font-medium">300</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                        <span class="text-gray-400">Laptop</span>
+                                    </div>
+                                    <span class="text-white font-medium">300</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+                                        <span class="text-gray-400">Tablet</span>
+                                    </div>
+                                    <span class="text-white font-medium">200</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profit Earned -->
+                        <div class="glass-card rounded-2xl p-6 hover-lift fade-in" style="animation-delay: 0.7s">
+                            <h3 class="text-white text-lg font-semibold mb-6">Profit Earned</h3>
+                            <div class="h-40">
+                                <canvas id="profitChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Top Deals Data
+        const topDeals = [
+            { name: 'Elva McDonald', email: 'elva@gmail.com', amount: '$3,668', img: 'https://i.pravatar.cc/150?img=1' },
+            { name: 'Linnie Nelson', email: 'linnie@gmail.com', amount: '$3,256', img: 'https://i.pravatar.cc/150?img=2' },
+            { name: 'Brent Reeves', email: 'brent@gmail.com', amount: '$2,998', img: 'https://i.pravatar.cc/150?img=3' },
+            { name: 'Adeline Watson', email: 'adeline@gmail.com', amount: '$2,512', img: 'https://i.pravatar.cc/150?img=4' },
+            { name: 'Juan Harrington', email: 'juan@gmail.com', amount: '$2,134', img: 'https://i.pravatar.cc/150?img=8' },
+            { name: 'Augusta McGee', email: 'augusta@gmail.com', amount: '$1,932', img: 'https://i.pravatar.cc/150?img=9' },
+            { name: 'Angel Thomas', email: 'angel@gmail.com', amount: '$1,560', img: 'https://i.pravatar.cc/150?img=10' }
+        ];
+
+        // Render Top Deals
+        const dealsContainer = document.getElementById('topDealsList');
+        topDeals.forEach((deal, index) => {
+            const dealEl = document.createElement('div');
+            dealEl.className = 'flex items-center justify-between group cursor-pointer';
+            dealEl.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <img src="${deal.img}" alt="${deal.name}" class="w-10 h-10 rounded-full border-2 border-gray-700 group-hover:border-indigo-500 transition-colors">
+                    <div>
+                        <div class="text-white text-sm font-medium group-hover:text-indigo-400 transition-colors">${deal.name}</div>
+                        <div class="text-gray-500 text-xs">${deal.email}</div>
+                    </div>
+                </div>
+                <div class="text-white font-semibold text-sm">${deal.amount}</div>
+            `;
+            dealsContainer.appendChild(dealEl);
+        });
+
+        // Chart.js Defaults
+        Chart.defaults.color = '#6b7280';
+        Chart.defaults.borderColor = 'rgba(75, 85, 99, 0.2)';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        // Total Visit Chart (Bar Chart)
+        const visitCtx = document.getElementById('visitChart').getContext('2d');
+        new Chart(visitCtx, {
+            type: 'bar',
+            data: {
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                datasets: [{
+                    data: [65, 59, 45, 55, 40, 70, 45],
+                    backgroundColor: '#f97316',
+                    borderRadius: 4,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+                    y: { display: false }
+                }
+            }
+        });
+
+        // Revenue Analytics (Area Chart)
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueGradient1 = revenueCtx.createLinearGradient(0, 0, 0, 300);
+        revenueGradient1.addColorStop(0, 'rgba(99, 102, 241, 0.4)');
+        revenueGradient1.addColorStop(1, 'rgba(99, 102, 241, 0.0)');
+
+        const revenueGradient2 = revenueCtx.createLinearGradient(0, 0, 0, 300);
+        revenueGradient2.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
+        revenueGradient2.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+
+        const revenueGradient3 = revenueCtx.createLinearGradient(0, 0, 0, 300);
+        revenueGradient3.addColorStop(0, 'rgba(245, 158, 11, 0.4)');
+        revenueGradient3.addColorStop(1, 'rgba(245, 158, 11, 0.0)');
+
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        label: 'Series 1',
+                        data: [3000, 3500, 2800, 3200, 2900, 3100, 3300],
+                        borderColor: '#6366f1',
+                        backgroundColor: revenueGradient1,
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Series 2',
+                        data: [4000, 4500, 8000, 5000, 4800, 5200, 5500],
+                        borderColor: '#10b981',
+                        backgroundColor: revenueGradient2,
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Series 3',
+                        data: [6000, 6500, 14000, 8000, 7500, 8500, 9000],
+                        borderColor: '#f59e0b',
+                        backgroundColor: revenueGradient3,
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { 
+                        beginAtZero: true,
+                        ticks: { callback: (val) => val / 1000 + 'k' }
+                    }
+                }
+            }
+        });
+
+        // Leads by Source (Doughnut Chart)
+        const leadsCtx = document.getElementById('leadsChart').getContext('2d');
+        new Chart(leadsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Mobile', 'Desktop', 'Laptop', 'Tablet'],
+                datasets: [{
+                    data: [400, 300, 300, 200],
+                    backgroundColor: ['#3b82f6', '#34d399', '#fbbf24', '#f97316'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '75%',
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // Profit Earned (Bar Chart)
+        const profitCtx = document.getElementById('profitChart').getContext('2d');
+        new Chart(profitCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    data: [4500, 3800, 3200, 4100, 3600, 4800],
+                    backgroundColor: '#818cf8',
+                    borderRadius: 4,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { display: false }
+                }
+            }
+        });
+
+        // Add interactive hover effects to stat cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

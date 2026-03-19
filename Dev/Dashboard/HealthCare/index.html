@@ -113,41 +113,71 @@
                 </div>
             </div>
             <div class="middle-row">
-                <div class="charts-card">
-                    <div class="card chart-container">
-                        <div class="card-header">
-                            <h4>Total Trends</h4>
-                            <select><option>Last week</option></select>
+            <!-- Patient Trends Chart -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Patient Demographics</div>
+                            <div class="card-subtitle">Daily visits by category</div>
                         </div>
+                        <span class="badge badge-blue">Last 7 Days</span>
+                    </div>
+                    <div class="chart-container">
                         <canvas id="trendsChart"></canvas>
-                        <ul class="legend-trend">
-                            <li class="legend-item"><span class="dot" style="background: #6DCCF2;"></span>Female</li>
-                            <li class="legend-item"><span class="dot" style="background: #3029F2;"></span>Male</li>
-                            <li class="legend-item"><span class="dot" style="background: #F2A950;"></span>Children</li>
-                        </ul>
                     </div>
-                    <div class="card chart-container">
-                        <div class="card-header">
-                            <h4>Patients by Department</h4>
-                            <select><option>Today</option></select>
+                    <div class="legend-custom">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #4318FF;"></div>
+                            <span>Male</span>
                         </div>
-                        <div class="radial-chart">
-                            <div id="chart"></div>
-                            <ul class="legend-radial">
-                                <li class="legend-item"><span class="dot" style="background: #4A72FF;"></span> General Medicine</li>
-                                <li class="legend-item"><span class="dot" style="background: #50CD89;"></span> Orthopedics</li>
-                                <li class="legend-item"><span class="dot" style="background: #FFAD5F;"></span> Cardiology</li>
-                                <li class="legend-item"><span class="dot" style="background: #F1416C;"></span> Gynecology</li>
-                            </ul>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #6AD2FF;"></div>
+                            <span>Female</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #FFB547;"></div>
+                            <span>Children</span>
                         </div>
                     </div>
-                    <div class="card chart-container">
-                        <div class="card-header">
-                            <h4>Workforce Distribution</h4>
-                            <select><option>Today</option></select>
+                </div>
+
+                <!-- Department Distribution -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Department Distribution</div>
+                            <div class="card-subtitle">Patient allocation by specialty</div>
                         </div>
-                        <div class="bar-chart-wrapper">
-                            <canvas id="workforceChart"></canvas>
+                        <span class="badge badge-green">Real-time</span>
+                    </div>
+                    <div class="chart-container-small">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+                <!-- Workforce Status -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Workforce Status</div>
+                            <div class="card-subtitle">Current staff availability</div>
+                        </div>
+                        <span class="badge badge-orange">Live</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="workforceChart"></canvas>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" style="color: #50CD89;">90</div>
+                            <div class="stat-label">On Duty</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" style="color: #F1416C;">40</div>
+                            <div class="stat-label">Off Duty</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" style="color: #FFAD5F;">20</div>
+                            <div class="stat-label">On Leave</div>
                         </div>
                     </div>
                 </div>
@@ -167,7 +197,7 @@
                         <div class="icon-box-small">🛢️</div>
                         <div class="item-info"><strong>Oxygen Cylinder Refill Needed</strong><p>10 minutes ago</p></div>
                     </div>
-                    </div>
+                </div>
             </div>
         </main>
         </div>
