@@ -1,3 +1,29 @@
+// UPDATE OF TITLE AND KEEPING IT ACTIVE 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const headerTitle = document.getElementById('header-title');
+    const navItems = document.querySelectorAll('.nav-item');
+    const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+    const updateHeader = (element) => {
+        const pathLink = element.querySelector('a');
+        if (pathLink && headerTitle) {
+            headerTitle.textContent = pathLink.innerText.trim();
+        }
+    };
+    navItems.forEach(item => {
+        const pathLink = item.querySelector('a');
+        const href = pathLink.getAttribute('href');
+        if (currentPath === href) {
+            item.classList.add('active');
+            updateHeader(item);
+        }
+        item.addEventListener('click', function() {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+            updateHeader(this);
+        });
+    });
+});
 
 // Patient Trends Bar Chart - Enhanced
 const trendsCtx = document.getElementById('trendsChart').getContext('2d');
